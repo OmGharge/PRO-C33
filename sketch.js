@@ -14,7 +14,8 @@ function preload(){
 
 function setup() {
   createCanvas(800,400);
-  bgSound1.play();
+  //plays the background music
+  bgSound1.loop();
 
 } 
 
