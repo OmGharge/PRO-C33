@@ -14,14 +14,14 @@ function preload(){
 
 function setup() {
   createCanvas(800,400);
-  //plays the background music
   bgSound1.loop();
 
 } 
 
 function draw() {
   
-  background(bg); 
+  background(bg);
+
   
   // calling the functions
   spawnSnow1();
