@@ -1,6 +1,7 @@
 var bg;
 var snow1,snowImg1;
 var snow2,snowImg2;
+var boy, boyImg;
 var bgSound1;
 var bgSound2;
 function preload(){
@@ -10,11 +11,18 @@ function preload(){
   snowImg2 = loadImage("snow5.webp");
   bgSound1 = loadSound("Sound.mp3");
   bgSound2 = loadSound("Sound2.mp3")
+  boyImg   = loadImage("boy in the snow.png")
+    
+  
 }
 
 function setup() {
   createCanvas(800,400);
   bgSound1.loop();
+  boy = createSprite(750,250);
+  boy.addImage('boy',boyImg);
+  boy.scale = 0.8;
+ 
 
 } 
 
@@ -22,7 +30,20 @@ function draw() {
   
   background(bg);
 
-  
+ if(keyCode === 37){
+  boy.x =  boy.x -5
+ }
+ if(keyCode === 39){
+  boy.x =  boy.x +5
+ } 
+ 
+if(boy.x>800){
+  boy.x = 0
+}
+if(boy.x<0){
+  boy.x = 800
+
+}
   // calling the functions
   spawnSnow1();
   spawnSnow2();
@@ -60,3 +81,9 @@ function spawnSnow2(){
 
 
 }
+/*function keyReleased() {
+  if (value === 37) {
+    boy.velocityX = 0;
+  }
+}
+  */
